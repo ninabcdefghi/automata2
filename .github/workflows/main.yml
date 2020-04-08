@@ -1,4 +1,7 @@
-on: [push]
+on: 
+  push:
+  schedule:
+    - cron '*/10 * * * *'
 
 jobs:
   hello_world_job:
