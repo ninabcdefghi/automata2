@@ -3,7 +3,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 8 * * *'
 
 jobs:
   hello_world_job:
