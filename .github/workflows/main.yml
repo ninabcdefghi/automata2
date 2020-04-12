@@ -20,6 +20,8 @@ jobs:
       run: pip3 install -r requirements.txt
     - name: Set up Python
       uses: actions/setup-python@v1
+      with:
+        python-version: '3.x' 
     - name: Get new Data
       run: python3 genderstat.py
     - uses: yaananth/run-notebook@v1
