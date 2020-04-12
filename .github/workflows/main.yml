@@ -26,7 +26,7 @@ jobs:
       run: |
         pip install papermill ipykernel jupyter
         python3 -m ipykernel install --user --name python3
-#        sudo chmod -R 777 .
+        #sudo chmod -R 777 .
         papermill --kernel python3 graph.ipynb graph.ipynb
     - name: Create local changes
       run: echo acbcbc >> hhhaah
