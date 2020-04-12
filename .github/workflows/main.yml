@@ -18,6 +18,8 @@ jobs:
       uses: actions/checkout@master
     - name: Install Python dependencies
       run: pip3 install -r requirements.txt
+    - name: Set up Python
+      uses: actions/setup-python@v1
     - name: Get new Data
       run: python3 genderstat.py
     - uses: yaananth/run-notebook@v1
