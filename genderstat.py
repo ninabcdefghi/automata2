@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import gender_guesser.detector as gender
-import pandas as pd
 import time
 import csv
 
