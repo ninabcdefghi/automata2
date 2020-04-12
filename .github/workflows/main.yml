@@ -31,7 +31,7 @@ jobs:
         GITHUB: ${{ toJson(github) }}
       with:
         notebook: "graph.ipynb"
-        params: "PATHTOPARAMS.json"
+#        params: "PATHTOPARAMS.json"
         isReport: False
         poll: True
     - name: Create local changes
