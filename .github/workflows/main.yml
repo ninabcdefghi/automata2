@@ -22,18 +22,12 @@ jobs:
         python-version: '3.x' 
     - name: Install Python dependencies
       run: pip3 install -r requirements.txt
-    - name: Get new Data
-      run: python3 genderstat.py
-    - uses: yaananth/run-notebook@v1
-      env:
-        RUNNER: ${{ toJson(runner) }}
-        SECRETS: ${{ toJson(secrets) }}
-        GITHUB: ${{ toJson(github) }}
-      with:
-        notebook: "graph.ipynb"
-        params: "homepage.csv"
-        isReport: False
-        poll: True
+    - name: run notebook
+      run: |
+        pip install papermill ipykernel jupyter
+        python3 -m ipykernel install --user --name python3
+#        sudo chmod -R 777 .
+        papermill --kernel python3 graph.ipynb graph.ipynb
     - name: Create local changes
       run: echo acbcbc >> hhhaah
     - name: Commit files
