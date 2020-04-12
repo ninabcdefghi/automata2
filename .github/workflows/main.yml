@@ -24,7 +24,7 @@ jobs:
       run: pip3 install -r requirements.txt
     - name: run notebook
       run: |
-        pip install papermill ipykernel jupyter
+        pip install papermill ipykernel jupyter pandas numpy matplotlib
         python3 -m ipykernel install --user --name python3
         #sudo chmod -R 777 .
         papermill --kernel python3 graph.ipynb graph.ipynb
