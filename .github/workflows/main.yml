@@ -4,16 +4,10 @@ on:
     - cron: '0 * * * *'
 
 jobs:
-  hello_world_job:
+  update_notebook:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: update notebook
     steps:
-#    - name: Hello world action step
-#      id: hello
-#      uses: ninabcdefghi/automata2@master
-#      with:
-#        who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
     - name: Get the output time
       uses: actions/checkout@master
     - name: Set up Python
@@ -28,8 +22,6 @@ jobs:
         python3 -m ipykernel install --user --name python3
         #sudo chmod -R 777 .
         papermill --kernel python3 graph.ipynb graph.ipynb
-    - name: Create local changes
-      run: echo acbcbc >> hhhaah
     - name: Commit files
       run: |
         git config --local user.email "tomsurayo@gmail.com"
