@@ -18,7 +18,7 @@ jobs:
  #     run: echo "The time was ${{ steps.hello.outputs.time }}"
  #   - uses: actions/checkout@master
     - name: Install Python dependencies
-      run: python3 install -r requirements.txt
+      run: pip3 install -r requirements.txt
     - name: Get new Data
       run: python3 genderstat.py
     - name: Create local changes
