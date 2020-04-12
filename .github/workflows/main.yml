@@ -16,12 +16,12 @@ jobs:
     # Use the output from the `hello` step
     - name: Get the output time
       uses: actions/checkout@master
-    - name: Install Python dependencies
-      run: pip3 install -r requirements.txt
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
         python-version: '3.x' 
+    - name: Install Python dependencies
+      run: pip3 install -r requirements.txt
     - name: Get new Data
       run: python3 genderstat.py
     - uses: yaananth/run-notebook@v1
