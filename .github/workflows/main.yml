@@ -16,6 +16,8 @@ jobs:
         python-version: '3.x' 
     - name: Install Python dependencies
       run: pip3 install -r requirements.txt
+    - name: update data
+      run: python3 genderstat.py
     - name: run notebook
       run: |
         pip install papermill ipykernel jupyter pandas numpy matplotlib
