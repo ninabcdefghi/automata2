@@ -20,6 +20,16 @@ jobs:
       run: pip3 install -r requirements.txt
     - name: Get new Data
       run: python3 genderstat.py
+    - uses: yaananth/run-notebook@v1
+      env:
+        RUNNER: ${{ toJson(runner) }}
+        SECRETS: ${{ toJson(secrets) }}
+        GITHUB: ${{ toJson(github) }}
+      with:
+        notebook: "graph.ipynb"
+        params: "PATHTOPARAMS.json"
+        isReport: False
+        poll: True
     - name: Create local changes
       run: echo acbcbc >> hhhaah
     - name: Commit files
